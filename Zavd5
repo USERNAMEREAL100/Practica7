@@ -1,0 +1,43 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class HzUzhe2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть розмір квадратної матриці: ");
+        int size = scanner.nextInt();
+
+        if (size <= 0) {
+            System.out.println("Розмір матриці має бути додатнім.");
+            return;
+        }
+
+        int[][] matrix = new int[size][size];
+        Random random = new Random();
+
+        System.out.println("Початкова матриця:");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = random.nextInt(21) - 10;
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        int[][] transposedMatrix = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                transposedMatrix[j][i] = matrix[i][j];
+            }
+        }
+
+        System.out.println("\nТранспонована матриця:");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(transposedMatrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
