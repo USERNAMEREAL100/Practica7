@@ -1,0 +1,33 @@
+public class Pyramida {
+    public static void main(String[] args) {
+        int[][] jaggedArray = {
+                {1},
+                {2, 3},
+                {4, 5, 6},
+                {7, 8, 9, 10},
+                {11, 12, 13, 14, 15}
+        };
+
+        System.out.println("Звичайний порядок:");
+        for (int i = 0; i < jaggedArray.length; i++) {
+            for (int j = 0; j < jaggedArray.length - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int num : jaggedArray[i]) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Зворотний порядок:");
+        for (int i = jaggedArray.length - 1; i >= 0; i--) {
+            for (int j = 0; j < jaggedArray.length - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int num : jaggedArray[i]) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+}
